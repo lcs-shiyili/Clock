@@ -12,24 +12,18 @@ struct WorldClockView: View {
         NavigationStack {
             VStack{
                 //Ottawa
-                HStack{
-                    //left side
-                    VStack{
-                        Text("Today, +0HRS")
-                        Text("Ottawa")
-                            .font(.system(.largeTitle, design: .default, weight: .thin))
-                    }
-                    
-                    Spacer()
-                    
-                    //Right side
-                    Text("6:35")
-                        .font(.system(size: 64.0, weight: .thin, design: .default))
-                    Text("AM")
-                        .font(.system(.largeTitle, design: .default, weight: .thin))
-                    
-                    
-                }
+                CityView(timeZoneOffset: "+0", city: "Ottawa", time: "6:35", amOrPm: "AM")
+                
+                //Vancouver
+                CityView(timeZoneOffset: "-3", city: "Vancouver", time: "3:35", amOrPm: "AM")
+                
+                //Humburg
+                CityView(timeZoneOffset: "+6", city: "Humburg", time: "12:35", amOrPm: "PM")
+                
+                //Sydney
+                CityView(timeZoneOffset: "+16", city: "Sydney", time: "10:35", amOrPm: "PM")
+                
+                //
             }
                 .navigationTitle("World Clock")
                 .toolbar {
@@ -58,3 +52,5 @@ struct WorldClockView: View {
 #Preview {
     LandingView()
 }
+
+
